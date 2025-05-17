@@ -1,0 +1,11 @@
+.movieImage {
+    width: 350px;
+    height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.title {
+    width: 350px;
+    overflow: hidden;
+    text-align: center;
+}

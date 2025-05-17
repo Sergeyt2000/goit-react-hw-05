@@ -1,0 +1,39 @@
+.contentWrapper {
+	display: flex;
+	gap: 40px;
+	padding: 40px 100px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+	margin-bottom: 10px;
+}
+.posterImg {
+	border-radius: 8px;
+	object-fit: cover;
+}
+.content {
+	padding: 16px;
+	border: 1px solid #646cff;
+	border-radius: 8px;
+	flex-grow: 1;
+}
+.contentTitle {
+	font-size: xx-large;
+	font-weight: 700;
+}
+.score {
+	display: block;
+    margin-bottom: 10px;
+}
+.overviewText {
+	font-weight: 700;
+    margin-bottom: 10px;
+}
+.genresList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+}
+.genresTitle {
+    display: flex;
+    flex-direction: row;
+}

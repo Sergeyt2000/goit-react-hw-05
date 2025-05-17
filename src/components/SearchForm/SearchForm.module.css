@@ -1,0 +1,20 @@
+.searchForm {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.searchInput {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.searchInput:hover,
+.searchInput:focus {
+    border: 1px solid #4c56e4;
+    outline: none;
+}
+.searchBtn {
+    border: none;
+}

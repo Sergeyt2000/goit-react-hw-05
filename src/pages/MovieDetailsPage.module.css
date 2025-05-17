@@ -1,0 +1,13 @@
+.info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 20px;
+}
+.link {
+    color: #000;
+}
+.linkActive {
+    color: chocolate;
+}

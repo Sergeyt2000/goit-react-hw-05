@@ -1,52 +1,28 @@
-import { useState, useEffect } from "react";
-import ContactForm from "../ContactForm/ContactForm";
-import SearchBox from "../SearchBox/SearchBox";
-import ContactList from "../ContactList/ContactList";
-import initialContacts from "../../initialContacts.json";
-
-// const initialContacts = [
-//   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
-//   { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
-//   { id: "id-3", name: "Eden Clements", number: "645-17-79" },
-//   { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
-// ];
+// import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
+import HomePage from "../../pages/HomePage";
+import MoviesPage from "../../pages/MoviesPage";
+import NotFoundPage from "../../pages/NotFoundPage";
+import MovieDetailsPage from "../../pages/MovieDetailsPage";
+import MovieCastPage from "../../pages/MovieCastPage";
+import MovieReviewsPage from "../../pages/MovieReviewsPage";
 
 export default function App() {
-  // const [contacts, setContacts] = useState(initialContacts);
-  const [contacts, setContacts] = useState(() => {
-    const savedContacts = localStorage.getItem("contacts");
-    if (savedContacts) {
-      return JSON.parse(savedContacts);
-    }
-    return initialContacts;
-  });
-  useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(contacts));
-  }, [contacts]);
   
-  const [filter, setFilter] = useState("");
-
-  const addContact = (newContact) => {
-    setContacts((prevContacts) => {return [...prevContacts, newContact]});
-   }
-  const deleteContact = (contactId) => {
-    setContacts((prevContacts) => {
-      return prevContacts.filter((contact) => contact.id !== contactId);
-    });
-  }
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
    
   return (
     <div>
-      <h1>Phonebook</h1>
-      <ContactForm addContact={addContact} />
-      <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList
-        contacts={filteredContacts}
-        onDeleteContact={deleteContact}
-      />
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCastPage />} />
+          <Route path="reviews" element={<MovieReviewsPage />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 }
