@@ -1,6 +1,7 @@
 import css from "./SearchForm.module.css";
 
 export default function SearchForm({ handleSearchMovie, searchQuery, handleChange }) {
+    
   const onHandleChange = (event) => {
     handleChange(event.target.value);
   };
@@ -16,6 +17,7 @@ export default function SearchForm({ handleSearchMovie, searchQuery, handleChang
         name="query"
         onChange={onHandleChange}
         value={searchQuery}
+        required
       />
       <button type="submit" className={css.searchBtn}>
         Search

@@ -1,4 +1,6 @@
 .castImg {
+    width: 300px;
+    height: 450px;
     border-radius: 8px;
     object-fit: cover;
 }

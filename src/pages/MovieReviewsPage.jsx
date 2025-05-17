@@ -20,7 +20,7 @@ export default function MovieReviewsPage() {
     }
     fetchMovieDetails(movieId);
   }, [movieId]);
-  console.log(movieDetails);
+  // console.log(movieDetails);
 
   return (
     <div className={css.reviewsContainer}>

@@ -14,7 +14,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkRef = useRef(location.state);
-  console.log("backLinkRef", backLinkRef);
+  // console.log("backLinkRef", backLinkRef);
 
   useEffect(() => {
     if (!movieId) return;
@@ -31,7 +31,7 @@ export default function MovieDetailsPage() {
   // console.log(movieDetails);
 
   return (
-    <div>
+    <div className={css.container}>
       <Link to={backLinkRef.current || "/movies"}>
         <button type="button" className={css.button}>
           Go back

@@ -10,7 +10,7 @@ export default function MovieCard({ title, backdrop_path }) {
         className={css.movieImage}
         src={
           backdrop_path
-            ? `https://image.tmdb.org/t/p/w500${backdrop_path}}`
+            ? `https://image.tmdb.org/t/p/w500${backdrop_path}`
             : defaultImg
         }
         alt={title}

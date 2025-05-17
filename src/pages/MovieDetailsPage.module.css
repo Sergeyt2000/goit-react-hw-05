@@ -1,3 +1,6 @@
+.container {
+    padding: 40px;
+}
 .info {
     display: flex;
     gap: 20px;
@@ -10,4 +13,12 @@
 }
 .linkActive {
     color: chocolate;
+}
+.button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }

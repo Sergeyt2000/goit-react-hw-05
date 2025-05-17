@@ -19,6 +19,7 @@ export default function MovieCastPage() {
     }
     fetchMovieDetails(movieId);
   }, [movieId]);
+  console.log(movieDetails);
 
   return (
     <div className={css.castContainer}>

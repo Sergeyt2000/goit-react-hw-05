@@ -10,12 +10,14 @@ export default function MoviesPage() {
   const queryValue = searchParams.get("query") ?? "";
 
   const [searchQuery, setSearchQuery] = useState(queryValue);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
+  
   
   useEffect(() => {    
     if (!queryValue) return;
     async function fetchMovies() {
-      setSearchQuery('')
+      setMovies(null);
+      setSearchQuery('');
       try {
         const movieData = await fetchMovieSearch(queryValue);
         setMovies(movieData.results);
@@ -34,7 +36,7 @@ export default function MoviesPage() {
     setSearchParams(query);
   };
   
-  console.log("Movies:", movies);
+  // console.log("Movies:", movies);
   return (
     <div className={css.container}>
       <SearchForm
@@ -42,7 +44,7 @@ export default function MoviesPage() {
         handleSearchMovie={handleSearchMovie}
         query={searchQuery}
       />
-      {movies.length > 0 && <MovieList movies={movies} />}
+      {movies && <MovieList movies={movies} />}
     </div>
   );
 }
