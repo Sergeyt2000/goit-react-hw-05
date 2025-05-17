@@ -19,12 +19,12 @@ export default function MovieCastPage() {
     }
     fetchMovieDetails(movieId);
   }, [movieId]);
-  console.log(movieDetails);
+  // console.log(movieDetails);
 
   return (
     <div className={css.castContainer}>
-      {!movieDetails || !movieDetails.cast ? (
-        <p>We don't have any cast for this movie.</p>
+      {!movieDetails || movieDetails.cast.length === 0 ? (
+        <p className={css.noCastText}>We don't have any cast for this movie.</p>
       ) : (
         <ul className={css.castList}>
           {movieDetails &&
