@@ -18,7 +18,7 @@ export default function MovieCast({ castMember }) {
         alt={name}
         width="300"
       />
-      <p className={css.name}>Name: {name}</p>
+      <p className={css.name}>{name}</p>
       <p className={css.character}>Character: {character}</p>
     </div>
   );
